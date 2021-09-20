@@ -1,0 +1,2 @@
+# django-first-app
+ブログアプリケーション
