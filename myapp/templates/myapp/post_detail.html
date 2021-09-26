@@ -17,7 +17,7 @@
           <p class="card-text">
             {{object.content}}
           </p>
-          <a href="#!" class="btn btn-primary">Button</a>
+          <a href="{% url 'myapp:post_update' object.id %}" class="btn btn-primary">更新</a>
         </div>
       </div>
       <br>
