@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post
+from django.contrib.auth.forms  import AuthenticationForm
 
 
 class PostForm(forms.ModelForm):
@@ -11,4 +12,14 @@ class PostForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
+
+
+
+
+class LoginForm(AuthenticationForm):
+    def __int__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+
 
