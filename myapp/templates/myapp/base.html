@@ -38,8 +38,33 @@
               <li class="nav-item">
                 <a class="nav-link" href="/admin" target="_blank">管理画面へ</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="account"
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="account">
+                    {% if request.user.is_authenticated %}
+                    <li><a class="dropdown-item">{{ request.user }}</a></li>
+                    <li><a class="dropdown-item" href="{% url 'myapp:post_list'%}">ログアウト</a></li>
+                    {% else %}
+                    <li>
+                      <a class="dropdown-item" href="{% url 'myapp:login'%}">ログイン</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'myapp:post_list'%}">ユーザー登録</a>
+                    </li>
+                    <li>
+                    {% endif %}
+                  </li>
+                </ul>
               </li>
               <!-- Dropdown -->
               <li class="nav-item dropdown">
