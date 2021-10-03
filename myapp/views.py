@@ -5,6 +5,7 @@ from .models import Post
 from django.urls import reverse_lazy
 from .forms import PostForm
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
@@ -20,7 +21,7 @@ class Index(TemplateView):
         return context
 
 
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     success_url = reverse_lazy('myapp:index')
