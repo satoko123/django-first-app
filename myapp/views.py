@@ -27,6 +27,13 @@ class PostCreate(LoginRequiredMixin, CreateView):
     form_class = PostForm
     success_url = reverse_lazy('myapp:index')
 
+    def form_valid(self, form):
+        form.instance.auth_id = self.request.user.id
+        return super(PostCreate, self).form_valid(form)
+        
+    def get_success_url(self):
+        message.success(self.request, 'Postを登録しました。')
+        return resolve_url('myapp:index')
 
 class PostDetail(DetailView):
     model = Post
