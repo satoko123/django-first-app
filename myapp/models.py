@@ -11,3 +11,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title 
+
+class Like(models.Model):
+    post = models.ForeignKey(Post, verbose_name="投稿", on_delete=models.PROTECT)
+    user = models.ForeignKey(User, verbose_name="お気に入りしたユーザー", on_delete=models.PROTECT)
