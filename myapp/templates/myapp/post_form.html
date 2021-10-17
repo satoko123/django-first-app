@@ -6,11 +6,15 @@
         <br>
         <h2>Post登録・更新</h2>
         <br>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form_group">
                 <label>タイトル</label>
                 {{ form.title }}
+            </div>
+            <div class="form_group">
+                <label>カテゴリ</label>
+                {{ form.category }}
             </div>
             <br>
             <div class="form_group">

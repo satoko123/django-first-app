@@ -1,19 +1,19 @@
-from django.contrib import admin
-from .models import Post, Like, Category
+# from django.contrib import admin
+# from .models import Post, Like, Category
 
-# 管理画面でPostモデルが表示されるようにする
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-  list_display = ('id', 'author','title', 'created_at')
-  list_display_links = ('title',) # 詳細に行くのにクリックする箇所
-  ordering = ('-created_at',) # 並び順
+# # 管理画面でPostモデルが表示されるようにする
+# @admin.register(Post)
+# class PostAdmin(admin.ModelAdmin):
+#   list_display = ('id', 'author','title', 'created_at')
+#   list_display_links = ('title',) # 詳細に行くのにクリックする箇所
+#   ordering = ('-created_at',) # 並び順
 
-@admin.register(Like)
-class LikeAdmin(admin.ModelAdmin):
-  list_display = ('id', 'user', 'post')
-  list_display_links = ('post',) # 詳細に行くのにクリックする箇所
+# @admin.register(Like)
+# class LikeAdmin(admin.ModelAdmin):
+#   list_display = ('id', 'user', 'post')
+#   list_display_links = ('post',) # 詳細に行くのにクリックする箇所
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-  list_display = ('id', 'name')
-  list_display_links = ('name',) # 詳細に行くのにクリックする箇所
+# @admin.register(Category)
+# class CategoryAdmin(admin.ModelAdmin):
+#   list_display = ('id', 'name')
+#   list_display_links = ('name',) # 詳細に行くのにクリックする箇所
