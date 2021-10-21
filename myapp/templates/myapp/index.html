@@ -25,7 +25,10 @@
     <div class="card h-100">
       <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">{{ item.title }}<small>{{ item.author }}</small></h5>
+        <h5 class="card-title"><i class="fas fa-clone"></i> {{ item.title }} </h5>
+        <br>
+        <p><i class="far fa-laugh"></i> {{ item.author }}</p>
+        <p><i class="fas fa-icons"></i> {{ item.category }}</p>
         <p class="card-text">{{ item.content }}</p>
         <a href="{% url 'myapp:post_detail' item.id %}" type="button" class="btn btn-primary">もっと読む</a>
       </div>
