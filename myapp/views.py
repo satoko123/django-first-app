@@ -109,7 +109,7 @@ class CategoryDetail(DetailView):
     slug_field = 'name_en'
     slug_url_kwarg = 'name_en'
 
-    def get_context_data(self, *args, **kwargs)
+    def get_context_data(self, *args, **kwargs):
         detail_data = Category.objects.get(name_en = self.kwargs['name_en'])
         category_posts = Post.objects.filter(category = detail_data.id).order_by('-created_at')
 

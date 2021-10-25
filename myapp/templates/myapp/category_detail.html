@@ -6,8 +6,13 @@
         <br>
         <h2>{{ object.name }}</h2>
         <br>
-        {% for item in category_posts %}
-        <li class="list-group"
+        <ul class="list-group">
+          {% for item in category_posts %}
+          <li class="list-group-item"><a href="{% url 'myapp:post_detail' item.id %}">{{ item.title }}</li>
+          {% endfor %}
+        </ul>
+        <br>
+        <br>
 
     </div>
 
