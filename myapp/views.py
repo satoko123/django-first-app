@@ -123,7 +123,7 @@ class CategoryDetail(DetailView):
 
         params = {
             'object': detail_data,
-            'category_posts': category_posts,    
+            'category_posts': category_posts,
         }
 
         return params
