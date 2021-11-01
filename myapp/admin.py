@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Like
+from .models import Post, Like, Category
 
 # 管理画面でPostモデルが表示されるようにする
 @admin.register(Post)
@@ -12,3 +12,8 @@ class PostAdmin(admin.ModelAdmin):
 class LikeAdmin(admin.ModelAdmin):
   list_display = ('id', 'user', 'post')
   list_display_links = ('post',) # 詳細に行くのにクリックする箇所
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+  list_display = ('id', 'name')
+  list_display_links = ('name',) # 詳細に行くのにクリックする箇所
