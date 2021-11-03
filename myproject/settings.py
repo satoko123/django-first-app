@@ -128,3 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ログイン機能の追加
 LOGIN_URL = 'myapp:login'
 LOGIN_REDIRECT_URL = 'myapp:index'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
