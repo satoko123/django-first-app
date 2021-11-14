@@ -48,7 +48,7 @@
                   data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Account
+                  アカウント
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="account">
                     {% if request.user.is_authenticated %}
@@ -76,32 +76,33 @@
                   data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Post
+                  ブログ
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li>
                     <a class="dropdown-item" href="{% url 'myapp:post_create'%}">新規投稿</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="{% url 'myapp:post_list'%}">投稿一覧</a>
+                    <a class="dropdown-item" href="{% url 'myapp:post_list'%}">ブログ一覧</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="{% url 'myapp:category_list'%}">カテゴリ一覧</a>
+                    <a class="dropdown-item" href="{% url 'myapp:category_list'%}">カテゴリー一覧</a>
                   </li>
                 </ul>
               </li>
               <li class="navbar-light bg-light ">
-                <form class="d-flex input-group w-auto">
+                <form action="{% url 'myapp:search' %}" class="d-flex input-group w-auto" method="POST">
+                  {% csrf_token %}
                   <input
                     type="search"
                     class="form-control rounded"
                     placeholder="Search"
                     aria-label="Search"
                     aria-describedby="search-addon"
+                    name="freeword"
                   />
-                  <span class="input-group-text border-0" id="search-addon">
-                    <i class="fas fa-search"></i>
-                  </span>
+                  <button class="btn byn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                
                 </form>
               </li>
             </ul>

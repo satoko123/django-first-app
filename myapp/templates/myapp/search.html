@@ -16,7 +16,7 @@
             </tr>
           </thead>
           <tbody>
-            {% for item in post_list %}
+            {% for item in search_list %}
             <tr>
               <td>
                 <a href="{% url 'myapp:post_detail' item.pk %}" >{{ item.title }}</a>
