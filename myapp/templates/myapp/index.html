@@ -24,20 +24,20 @@
   <div class="col">
     <div class="card h-100">
       {% if item.thumbnail %}
-      <div class="media">
-      <img src="{{ item.thumbnail.url }}" alt="{{ item.title }}" class="card-img-top"/></div>
+      <div class="text-center">
+      <img src="{{ item.thumbnail.url }}" alt="{{ item.title }}" class="img-fluid"/></div>
       {% else %}
-      <div>
-      <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" class="card-img-top" alt="..." /></div>
+      <div class="media_file">
+      <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" alt="..." class="card-img-top"/></div>
       {% endif %}
-      <div><a href="{% url 'myapp:post_detail' item.id %}"></a></div>
+      <a href="{% url 'myapp:post_detail' item.id %}"></a>
 
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-clone"></i> {{ item.title }} </h5>
         <br>
         <p><i class="fas fa-user-edit"></i> {{ item.author }}</p>
         <p><i class="fas fa-icons"></i> {{ item.category }}</p>
-        <p class="card-text">{{ item.content | safe }}</p>
+        <p class="card-text">{{ item.content | safe | truncatechars_html:30 }}</p>
         <a href="{% url 'myapp:post_detail' item.id %}" type="button" class="btn btn-primary">もっと読む</a>
       </div>
       <div class="card-footer">
