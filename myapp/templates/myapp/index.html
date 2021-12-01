@@ -1,4 +1,5 @@
 {% extends 'myapp/base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- Background image -->
@@ -9,9 +10,7 @@
   <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">
-        <h1 class="mb-3">Heading</h1>
-        <h4 class="mb-3">Subheading</h4>
-        <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+        <h1>my blog</h1>
       </div>
     </div>
   </div>
@@ -24,9 +23,11 @@
   <div class="col">
     <div class="card h-100">
       {% if item.thumbnail %}
-      <img src="{{ item.thumbnail.url }}" class="card-img-top" alt="{{ item.title }}" />
+      <div class="text-center">
+      <img src="{{ item.thumbnail.url }}" alt="{{ item.title }}" class="img-fluid"/></div>
       {% else %}
-      <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" class="card-img-top" alt="..." />
+      <div class="media_file">
+      <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg" alt="..." class="card-img-top"/></div>
       {% endif %}
       <a href="{% url 'myapp:post_detail' item.id %}"></a>
 
@@ -35,7 +36,7 @@
         <br>
         <p><i class="fas fa-user-edit"></i> {{ item.author }}</p>
         <p><i class="fas fa-icons"></i> {{ item.category }}</p>
-        <p class="card-text">{{ item.content }}</p>
+        <p class="card-text">{{ item.content | safe | truncatechars_html:30 }}</p>
         <a href="{% url 'myapp:post_detail' item.id %}" type="button" class="btn btn-primary">もっと読む</a>
       </div>
       <div class="card-footer">
