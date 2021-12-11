@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'django.contrib.sites',
-    'sitemanage'
+    'sitemanage',
 ]
 
 SITE_ID = 1

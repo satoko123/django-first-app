@@ -10,7 +10,8 @@
   <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">
-        <h1>my blog</h1>
+        <h1>{{ request.site.siteconfig.top_title }}</h1>
+        <h2>{{ request.site.siteconfig.top_subtitle }}</h2>
       </div>
     </div>
   </div>
