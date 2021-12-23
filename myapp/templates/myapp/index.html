@@ -2,6 +2,7 @@
 
 {% block content %}
 <!-- Background image -->
+<br>
 <div class="p-5 mb-5 text-center bg-image" style="
   background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.jpg');
   height: 400px;
@@ -36,11 +37,13 @@
         <br>
         <p><i class="fas fa-user-edit"></i> {{ item.author }}</p>
         <p><i class="fas fa-icons"></i> {{ item.category }}</p>
-        <p class="card-text">{{ item.content | safe | truncatechars_html:30 }}</p>
-        <a href="{% url 'myapp:post_detail' item.id %}" type="button" class="btn btn-primary">もっと読む</a>
+        <p class="card-text text-muted" style="color:lightslategrey">{{ item.content | safe | truncatechars_html:30 }}</p>
+        <a href="{% url 'myapp:post_detail' item.id %}" type="button" class="btn btn-info">もっと読む</a>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+      <div class="card-footer text-center">
+        <small class="text-muted">更新日: {{ item.created_at.date }}</small>
+        <br>
+        <i class="fas fa-heart" style="color: darksalmon;"></i> {{ item.like_count }}
       </div>
     </div>
   </div>
