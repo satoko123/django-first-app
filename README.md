@@ -25,7 +25,7 @@
 <br />
 
 # URL
-https://djangofirstapp9999.herokuapp.com/
+https://djangofirstapp9999.herokuapp.com
 <br />
 <br />
 
