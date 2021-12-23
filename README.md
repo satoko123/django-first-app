@@ -8,11 +8,11 @@
 ## 主な機能
 ### 1. ブログ投稿機能
 - 新規投稿、変更、削除ができる
-https://gyazo.com/0521e4dbba7ee7ae4cc4b892d111d866
+[![Image from Gyazo](https://i.gyazo.com/0521e4dbba7ee7ae4cc4b892d111d866.gif)](https://gyazo.com/0521e4dbba7ee7ae4cc4b892d111d866)
 
 ### 2. お気に入り機能
-- 気に入った投稿はお気に入りにできる
-https://gyazo.com/a2507a4bf15f2e7540cd8956b5ab9464
+- 気に入った投稿はお気に入り投票ができる
+[![Image from Gyazo](https://i.gyazo.com/a2507a4bf15f2e7540cd8956b5ab9464.gif)](https://gyazo.com/a2507a4bf15f2e7540cd8956b5ab9464)
 
 ### 3. ユーザ管理機能
 - 新規登録、ログイン機能が利用できる
